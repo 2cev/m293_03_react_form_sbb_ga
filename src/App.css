@@ -1,8 +1,133 @@
-.App {
-  text-align: left;
+/* O_o => main structure classes ========================= */
+.Stage {
+	width: 100%;
+	height: 100%;
 }
-
-.FormDiv {
-  width: 50vw;
-  padding: 0 25vw;
+.StgWrapper {
+	width: 60vw;
+	height: 80vh;
+	padding: 10vh 20vw;
+}
+/* O_o => <= o_O */
+.StgTitle {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 1em;
+}
+.DivTitle {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 0.5em;
+}
+.DivSubTitle {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 0.25em;
+}
+/* O_o => <= o_O */
+h1 {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	font-family: "Raleway", sans-serif;
+	font-weight: 300;
+	font-size: 40px;
+	color: #000000;
+}
+h1 span {
+	display: block;
+	font-size: 0.5em;
+	line-height: 1.2;
+	margin-top: 0.25em;
+}
+h1 em {
+	font-style: normal;
+	font-weight: 600;
+}
+/* O_o => <= o_O */
+h2 {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 30px;
+	color: #000000;
+}
+h2 span {
+	display: block;
+	font-size: 0.5em;
+	line-height: 1.2;
+	margin-top: 0.25em;
+}
+h2 em {
+	font-style: normal;
+	font-weight: 400;
+}
+/* O_o => <= o_O */
+h3 {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	font-family: "Raleway", sans-serif;
+	font-weight: 100;
+	font-size: 18px;
+	color: #000000;
+}
+h3 span {
+	display: block;
+	font-size: 0.65em;
+	line-height: 1.2;
+	margin-top: 0.25em;
+}
+h3 em {
+	font-style: normal;
+	font-weight: 400;
+}
+/* O_o => sub structure classes ========================= */
+.App {
+	width:auto;
+	height:auto;
+}
+.DivWrapper {
+	width: fit-content;
+	height: auto;
+	padding: 0.125em 0.25em;
+	margin: 0.25em 1.0em;
+	background-color: #eeffff;
+}
+.DivFlexFlowRow {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: fit-content;
+	background-color: #ffeeff;
+}
+.DivFlexFlowCol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: fit-content;
+	background-color: #ffffee;
+}
+/* O_o => helper classes ========================= */
+.SpacerW {
+    width: 1em;
+    height: fit-content;
+}
+.SpacerH {
+    width: fit-content;
+    height: 1em;
+}
+.PadL {
+	padding-left: 0.5em;
+}
+.PadR {
+	padding-right: 0.5em;
+}
+.MargL {
+	margin-left: 0.5em;
+}
+.MargR {
+	margin-right: 0.5em;
 }

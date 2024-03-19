@@ -1,0 +1,22 @@
+.rbSwitch-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.5rem;
+    width: fit-content;
+}
+
+.rbSwitch-wrapper * {
+    width: fit-content;
+}
+
+.rbSwitch-wrapper input {
+    justify-self: end;
+}
+
+.rbSwitch-wrapper label {
+    justify-self: start;
+}
+
+input[type='radio'].rbSwitch-input:checked+label.rbSwitch-label {
+    font-weight: bolder;
+}
