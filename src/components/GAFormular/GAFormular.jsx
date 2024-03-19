@@ -3,6 +3,8 @@ import "./GAFormular.css";
 
 export default function GAFormular() {
 
-    <Checkbox label={"Blitz ein"}/>
+    <h4>Bestellformular für ein GA (General Abonemment) bei der SBB</h4>
+
+    
 
 }
