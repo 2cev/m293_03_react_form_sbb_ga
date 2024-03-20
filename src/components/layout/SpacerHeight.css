@@ -1,0 +1,22 @@
+.SpacerH {
+    height: 1em;
+}
+.SpacerHDouble {
+    height: 2em;
+}
+.SpacerWFit {
+    width: fit-content;
+}
+.SpacerWFull {
+    width: 100%;
+}
+.SpacerClr{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgba(00, 00, 00, 0.2);
+}
+.SpacerClrStrong{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgba(00, 00, 00, 0.5);
+}
