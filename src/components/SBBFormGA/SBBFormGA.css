@@ -1,12 +1,28 @@
-.tglSwitch-wrapper {
+.gaWrapper {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    column-gap: 0.5rem;
+    row-gap: 0.25rem;
+    width:100%;
+    height:fit-content;
+    align-items: center;
+}
+/* O_o => <= o_O */
+.gaConditions {
+    grid-column: 1 / -1;
+    align-self: center;
+}
+/* O_o => <= o_O */
+.switchWrapper {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-    width: fit-content;
+    width: 100%;
     align-items: center;
+    grid-column: 1 / -1;
+    place-self: center;
 }
-
-.tglSwitch-button {
+.switchButton {
     --animation-duration: 300ms;
     display: flex;
     justify-content: center;
@@ -18,24 +34,21 @@
     border: #0060df solid 0.05rem;
     transition: background-color var(--animation-duration);
 }
-
-.tglSwitch-button input[type="checkbox"]:checked+label {
+.switchButton input[type="checkbox"]:checked+label {
     background-color: white;
     transform: translateX(-50%);
 }
-.tglSwitch-button input[type="checkbox"]:not(:checked)+label {
+.switchButton input[type="checkbox"]:not(:checked)+label {
     transform: translateX(50%);
 }
-
-.tglSwitch-button input {
+.switchButton input {
     height: 100%;
     width: 100%;
     border-radius: 1rem;
     appearance: none;
     margin: 0;
 }
-
-.tglSwitch-dot {
+.switchDot {
     position: absolute;
     border-radius: 100%;
     background-color: #0060df;
@@ -43,3 +56,4 @@
     aspect-ratio: 1/1;
     transition: all var(--animation-duration);
 }
+/* O_o => <= o_O */

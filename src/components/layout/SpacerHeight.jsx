@@ -5,22 +5,18 @@ function setComponentInput(isVisible, isVisibleStrong, isDoubleSingle, isFullFit
     let classCollection = '';
     if (isVisible) {
         if (isVisibleStrong) {
-            classCollection += 'SpacerClrStrong '
+            classCollection += 'spacerHClrStrong '
         } else {
-            classCollection += 'SpacerClr '
+            classCollection += 'spacerHClr '
         }
     }
     
-    classCollection += isDoubleSingle ? 'SpacerHDouble ' : 'SpacerH ';
-    classCollection += isFullFitWidth ? 'SpacerWFull ' : 'SpacerWFit ';
-
-    console.log('// O_o :: ' +classCollection);
-
+    classCollection += isDoubleSingle ? 'spacerHDouble ' : 'spacerH ';
+    classCollection += isFullFitWidth ? 'spacerWFull ' : 'spacerWFit ';
     return classCollection;
 }
 
 export default function SpacerHeight({isVisible, isVisibleStrong, isDoubleSingle, isFullFitWidth}) {
-
     return (
         <>
             <div className={setComponentInput(isVisible, isVisibleStrong, isDoubleSingle, isFullFitWidth)}>&nbsp;</div>

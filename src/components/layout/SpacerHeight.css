@@ -1,21 +1,23 @@
-.SpacerH {
+.spacerH {
     height: 1em;
 }
-.SpacerHDouble {
+.spacerHDouble {
     height: 2em;
 }
-.SpacerWFit {
+.spacerWFit {
     width: fit-content;
 }
-.SpacerWFull {
+.spacerWFull {
     width: 100%;
 }
-.SpacerClr{
+.spacerHClr{
+	border: 0;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: rgba(00, 00, 00, 0.2);
 }
-.SpacerClrStrong{
+.spacerHClrStrong{
+	border: 0;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: rgba(00, 00, 00, 0.5);

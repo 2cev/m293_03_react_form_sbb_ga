@@ -1,4 +1,4 @@
-.tglSwitch-wrapper {
+.switch-wrapper {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.tglSwitch-button {
+.switch-button {
     --animation-duration: 300ms;
     display: flex;
     justify-content: center;
@@ -19,15 +19,15 @@
     transition: background-color var(--animation-duration);
 }
 
-.tglSwitch-button input[type="checkbox"]:checked+label {
+.switch-button input[type="checkbox"]:checked+label {
     background-color: white;
     transform: translateX(-50%);
 }
-.tglSwitch-button input[type="checkbox"]:not(:checked)+label {
+.switch-button input[type="checkbox"]:not(:checked)+label {
     transform: translateX(50%);
 }
 
-.tglSwitch-button input {
+.switch-button input {
     height: 100%;
     width: 100%;
     border-radius: 1rem;
@@ -35,7 +35,7 @@
     margin: 0;
 }
 
-.tglSwitch-dot {
+.switch-dot {
     position: absolute;
     border-radius: 100%;
     background-color: #0060df;
