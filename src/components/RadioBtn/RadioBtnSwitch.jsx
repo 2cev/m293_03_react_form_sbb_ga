@@ -5,12 +5,12 @@ export default function RadioBtnSwitch({rbSwitch, setFnc, labelFalse, labelTrue}
     return (
         <>
             <div className='rbSwitch-wrapper'>
-                <input type='radio' id='rbSwitch-on' name='rbSwitch' checked={rbSwitch} onChange={() => setFnc((f) => !f)}/>
-                <label htmlFor='rbSwitch-on'>
+                
+                <label htmlFor='rbSwitch-on'><input type='radio' id='rbSwitch-on' name='rbSwitch' className='MargR' checked={!rbSwitch} onChange={() => setFnc((f) => !f)}/>
                     {labelTrue}
                 </label>
-                <input type='radio' id='rbSwitch-off' name='rbSwitch' checked={!rbSwitch} onChange={() => setFnc((f) => !f)}/>
-                <label htmlFor='rbSwitch-off'>
+                <br />
+                <label htmlFor='rbSwitch-off'><input type='radio' id='rbSwitch-off' name='rbSwitch' className='MargR' checked={rbSwitch} onChange={() => setFnc((f) => !f)}/>
                     {labelFalse}
                 </label>
 
