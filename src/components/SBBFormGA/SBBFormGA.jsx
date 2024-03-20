@@ -1,14 +1,14 @@
 import './SBBFormGA.css';
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function Switch({name, state, setState, labelTrue, labelFalse}) {
     return (
         <>
-            <div className="switch-wrapper">
+            <div className='switch-wrapper'>
                 <label htmlFor={name}>{labelTrue}</label>
-                <div className="switch-button" style={{backgroundColor: state ? "#0060df" : "white"}}>
-                    <input type="checkbox" id={name} name={name} checked={state} onChange={() => setState((val) => !val)}/>
-                    <label htmlFor={name} className="switch-dot"/>
+                <div className='switch-button' style={{backgroundColor: state ? '#0060df' : 'white'}}>
+                    <input type='checkbox' id={name} name={name} checked={state} onChange={() => setState((val) => !val)}/>
+                    <label htmlFor={name} className='switch-dot'/>
                 </div>
                 <label htmlFor={name}>{labelFalse}</label>
             </div>
@@ -26,7 +26,7 @@ export default function SBBFormGA({priceList}) {
     
     
     useEffect(() => {
-        document.getElementById("startDate").valueAsDate = startDate;
+        document.getElementById('startDate').valueAsDate = startDate;
     }, [startDate]);
 
     useEffect(() => {
@@ -45,28 +45,35 @@ export default function SBBFormGA({priceList}) {
 
     return (
         <>
-            <form className="gaWrapper">
-                <select id="conditions" name="conditions" className='gaConditions' required>
-                    <option defaultValue defaultChecked default selected disabled>Bitte wählen Sie ihre Personenkategorie</option>
+            <form className='gaWrapper'>
+                <select id='conditions' name='conditions' className='gaConditions' required>
+                    <option value='' selected disabled hidden >Bitte wählen Sie ihre Personenkategorie</option>
                     {priceList.map(({label}) => {return (
                         <option value={label} key={label} onClick={() => setConditions(label)}>{label}</option>
                     )})}
                 </select>
+                    
                 <br />
-                <Switch name="class" state={firstClass} setState={setFirstClass} labelFalse="Zweite Klasse" labelTrue="Erste Klasse"/>
                 <br />
-                <Switch name="payment" state={payYearly} setState={setPayYearly} labelFalse="monatlich" labelTrue="jährlich"/>
+
+                <Switch name='class' state={firstClass} setState={setFirstClass} labelFalse='Zweite Klasse' labelTrue='Erste Klasse'/>
                 <br />
-                <label htmlFor="startDate">Wählen Sie das Gültigkeitsdatum (ab diesem Tag gütlig) ::</label>
                 <br />
-                <input required name="startDate" id="startDate" type="date" onChange={(e) => setStartDate(new Date(e.target.value))}/>
+                <Switch name='payment' state={payYearly} setState={setPayYearly} labelFalse='monatlich' labelTrue='jährlich'/>
                 <br />
-                {startDate ? <p>Ihr GA ist ab dem {startDate.toDateString()} gültig</p> : null}
-                {price > 0 ? <p>Sie bezahlen CHF {price.toFixed(2)} {payYearly ? "jährlich" : "monatlich"}</p> : null}
-                <button disabled={true} >Die Bestellung versenden (Wir arbeiten noch daran...)</button>
+                <br />
+                <label htmlFor='startDate'>Wählen Sie das Gültigkeitsdatum (ab diesem Tag gütlig):</label>
+                <br />
+                <input required name='startDate' id='startDate' type='date' onChange={(e) => setStartDate(new Date(e.target.value))}/>
 
             </form>
 
+            <div>
+                {startDate ? <p>Ihr Gültigkeitsdatum ist :: {startDate.toDateString()}.</p> : null}
+                {price > 0 ? <p>Ihre Bezahlung von CHF {price.toFixed(2)} wird {payYearly ? 'jährlich' : 'monatlich'} fällig.</p> : null}
+            </div>
+
+            <button disabled={true} >Die Bestellung versenden (technische Problemem o_O)</button> 
         </>
     );
 

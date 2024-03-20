@@ -13,16 +13,16 @@ import SBBformGA from './components/SBBFormGA/SBBFormGA.jsx';
 function App() {
 
 	//O_o => vars useStates
-	const [isBlitz, setIsBlitz] = useState(false);
-	const [isBestellBeilage, setIsBestellBeilage] = useState(false);
-	const [isBestellDrink, setIsBestellDrink] = useState(false);
+	const [isBlitz, setIsBlitz] 									= useState(false);
+	const [isBestellBeilage, setIsBestellBeilage] 					= useState(false);
+	const [isBestellDrink, setIsBestellDrink] 						= useState(false);
 
-	// const [isRadioBtnSwitch, setRadioBtnSwitch] = useState(false);
-	const [isToggleSwitch, setIsToggleSwitch] = useState(false);
-	const [isTeamCaptainIronman, setIsTeamCaptainIronman] = useState(false);
-	const [isMotorCarBike, setIsMotorCarBike] = useState(false);
+	// const [isRadioBtnSwitch, setRadioBtnSwitch] 					= useState(false);
+	const [isToggleSwitch, setIsToggleSwitch] 						= useState(false);
+	const [isTeamCaptainIronman, setIsTeamCaptainIronman] 			= useState(false);
+	const [isMotorCarBike, setIsMotorCarBike] 						= useState(false);
 
-	const [isLandscape, setIsLandscape] = useState(false);
+	const [isLandscape, setIsLandscape] 							= useState(true);
 
 	// O_o => catch var values onSubmit
     const onSubmit = (event) => {
@@ -38,8 +38,7 @@ function App() {
 
     }
 
-	// O_o ===> ==> => GA Form
-	
+	// O_o ===> ==> => prices for the GA Form
     const priceObjectsGA = [
         {label: "Erwachsene 25-64/65 Jahre",        priceMntCls1: 545, priceMntCls2: 340, priceYearCls1: 6300, priceYearCls2: 2860},
         {label: "Senior ab 64/65 Jahre",            priceMntCls1: 430, priceMntCls2: 240, priceYearCls1: 4840, priceYearCls2: 2880},
@@ -159,11 +158,11 @@ function App() {
 								</h3>
 							</div>
 
-							<div className='divWrapper divFlexFlowCol'>
-								<RadioBtnSwitch name='class' value={isBlitz} state={isBlitz} setFnc={setIsBlitz} labelFalse='Blitz Aus' labelTrue='Blitz Ein'/>
+							<div className='divWrapper divFlexFlowCol ClrGreen'>
+								<RadioBtnSwitch name='class' isOnOff={isBlitz} setFnc={setIsBlitz} labelFalse='Blitz Aus' labelTrue='Blitz Ein'/>
 							</div>
 							
-							<SpacerHeight  isVisible={false} isVisibleStrong={false} isDoubleSingle={true} isFullFitWidth={false} />
+							<SpacerHeight  isVisible={false} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={false} />
 							<SpacerHeight  isVisible={true} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={true} />
 							<SpacerHeight  isVisible={true} isVisibleStrong={true} isDoubleSingle={false} isFullFitWidth={true} />
 
@@ -216,7 +215,7 @@ function App() {
 								<label><input type='checkbox' name='bestellung002' className='margR' checked={isBestellDrink} onChange={() => setIsBestellDrink((c) => !c)} />mit Getränk</label>
 							</div>
 							
-							<SpacerHeight  isVisible={false} isVisibleStrong={false} isDoubleSingle={true} isFullFitWidth={false} />
+							<SpacerHeight  isVisible={false} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={false} />
 							<SpacerHeight  isVisible={true} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={true} />
 							<SpacerHeight  isVisible={true} isVisibleStrong={true} isDoubleSingle={false} isFullFitWidth={true} />
 
@@ -272,8 +271,6 @@ function App() {
 								<DspOrientationTglSwitch isLandscape={isLandscape} setIsLandscape={setIsLandscape} />
 							</div>
 							
-							
-
 							<SpacerHeight isVisible={true} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={true} />
 							{/* ToggleSwitch zwischen den Begriffen, als Komponente */}
 							<div className='divWrapper clrGrey'>
@@ -281,8 +278,8 @@ function App() {
 										UI RadioButtons :: Auswahl
 										<span>Umschaltung der Bildschirmorientierung zwischen Portrait und Landscape.</span>
 										<span className='clrGreen'>Ein ToggleSwitch horizontal zwischen beiden Begriffen,
-										<br />auf derselben Höhe angeordnet.<br />
-										als Komponente (dynamisch abgefüllt, aber funktioniert noch nicht generisch)</span>
+										<br />auf derselben Höhe angeordnet.</span>
+										<span className='clrRed'>als Komponente (dynamisch abgefüllt, aber funktioniert noch nicht generisch)</span>
 									</h3>
 								</div>
 								
@@ -299,7 +296,7 @@ function App() {
 								<SpacerHeight isVisible={false} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={false} />
 
 								<div className='divFlexFlowRow'>
-									Welche Arto von Motorsport magst du?
+									Welche Art von Motorsport magst du?
 									<SpacerWidth isVisible={false} isVisibleStrong={false} isDoubleSingle={false} isFullFitHeight={false} />
 									<ToggleSwitch switchName="Petrolhead" labelTrue="Racingbike" labelFalse="Racingcar" value={isMotorCarBike} isTrue={isMotorCarBike} setFnc={setIsMotorCarBike} />
 								</div>
@@ -311,14 +308,24 @@ function App() {
 									<SpacerWidth isVisible={false} isVisibleStrong={false} isDoubleSingle={false} isFullFitHeight={false} />
 									<ToggleSwitch switchName="TeamSelection" labelTrue="Captain America" labelFalse="Ironman" value={isTeamCaptainIronman} isTrue={isTeamCaptainIronman} setFnc={setIsTeamCaptainIronman} />
 								</div>
-
 							</div>
-							
-							<SpacerHeight  isVisible={false} isVisibleStrong={false} isDoubleSingle={true} isFullFitWidth={false} />
+								
 							<SpacerHeight  isVisible={true} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={true} />
 							<SpacerHeight  isVisible={true} isVisibleStrong={true} isDoubleSingle={false} isFullFitWidth={true} />
 
+							<div className='divWrapper clrGreen'>
+								<div className='divSubTitle'><h3 className='headline'>
+										Auswertung
+										<span>Ausgabe in der Browser-Konsole.</span>
+										<span className='clrGreen'>Die Komponenten mit dem [ O_o :: controlled submit values. ] ausgewerten.</span>
+									</h3>
+								</div>
+								
+							</div>
+
+							<SpacerHeight  isVisible={true} isVisibleStrong={false} isDoubleSingle={false} isFullFitWidth={true} />
 							<button className='btnSubmit' type='submit'>Beispiele in der Konsole auswerten!</button>
+
 						</form>
 						
 						<SpacerHeight  isVisible={false} isVisibleStrong={false} isDoubleSingle={true} isFullFitWidth={false} />
@@ -327,9 +334,9 @@ function App() {
 
 						{/* START CONTENT :: AUFGABE 2*/}
 						<div className='divWrapper'>
-							<div className='divTitle clrGrey'><h2 className='headline'>
-									Aufgabe 2 :: Bestellformular<br />
-									der SBB für ein GA
+							<div className='divTitle clrGreen'><h2 className='headline'>
+									Aufgabe 2<br />
+									Bestellformular der SBB für ein GA
 									<span>UI Elemente aus den vorherigen Aufgaben verwenden.<br />
 										Einen Prototypen des Bestellcoupons(Papier) entwickeln.</span>
 								</h2>
