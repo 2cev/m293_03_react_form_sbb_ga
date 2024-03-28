@@ -46,8 +46,8 @@ export default function SBBFormGA({priceList}) {
     return (
         <>
             <form className='gaWrapper'>
-                <select id='conditions' name='conditions' className='gaConditions' required>
-                    <option value='' selected disabled hidden >Bitte wählen Sie ihre Personenkategorie</option>
+                <select id='conditions' name='conditions' className='gaConditions' defaultValue='' required>
+                    <option value='' disabled hidden >Bitte wählen Sie ihre Personenkategorie</option>
                     {priceList.map(({label}) => {return (
                         <option value={label} key={label} onClick={() => setConditions(label)}>{label}</option>
                     )})}
